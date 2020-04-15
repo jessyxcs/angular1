@@ -13,6 +13,31 @@
   {{a*b}}
 </p>
 
-<div>
-  {{item.nama}} - {{item.harga}}
+<div *ngFor="let fruit of item; let i = index">
+ {{i+1}}. {{fruit.nama}} - {{fruit.harga | currency : 'Rp'}}
 </div>
+
+<div *ngFor = "let data of itemArr">
+  {{data}}
+</div>
+
+<p *ngIf="show">
+  Tampilkan jika nilai show = True
+</p>
+
+{{show}}
+
+<ng-template
+  *ngIf="show; then showBlock; else notShowBlock">
+</ng-template>
+
+<ng-template #showBlock>
+  <p>Show when show true</p>
+</ng-template>
+
+<ng-template #notShowBlock>
+  <p>Show when show not true</p>
+</ng-template>
+
+<input [(ngModel)] =user type="text">
+<p *ngIf="user"> Halo {{user}}</p>

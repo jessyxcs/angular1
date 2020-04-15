@@ -7,8 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Jessica Clarensia';
-  item = {
+  item = [{
     nama : 'Kelengkeng',
     harga : 10000
-  };
+  },{
+    nama : 'Jeruk',
+    harga : 5000
+  }];
+
+  itemArr = ['aa','bb','cc','dd'];
+
+  show: boolean = true;
+
+  user = "";
 }
